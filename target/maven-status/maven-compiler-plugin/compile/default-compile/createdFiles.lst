@@ -4,12 +4,14 @@ controlador\CifradoLlaveController.class
 vistas\Proyecto2.class
 vistas\Interfaz$4.class
 logicadenegocios\CifradoLlave.class
+controlador\CifradoInversoController.class
 controlador\CifradoCesarController.class
 vistas\Interfaz$5.class
 vistas\EnviarCorreoInterfaz$1.class
 controlador\CifradoController.class
 vistas\Interfaz$1.class
 vistas\Interfaz.class
+logicadenegocios\CifradoInverso.class
 vistas\Interfaz$2.class
 vistas\Interfaz$3.class
 vistas\EnviarCorreoInterfaz.class

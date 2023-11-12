@@ -7,6 +7,7 @@ package controlador;
  */
 import logicadenegocios.CifradoCesar;
 import logicadenegocios.CifradoLlave;
+import logicadenegocios.CifradoInverso;
 import vistas.Interfaz;
 
 public class ControladorPrincipal {
@@ -26,14 +27,12 @@ public class ControladorPrincipal {
     private void aplicarAlgoritmo() {
         String tipoCifrado = getTipoCifradoSeleccionado();
 
-        if (tipoCifrado.equals("César")) {
-            cifradoController = new CifradoCesarController(vista);
-        } else if (tipoCifrado.equals("Llave")) {
-            cifradoController = new CifradoLlaveController(vista);
-        } else {
-            // Manejar otro tipo de cifrado si es necesario
-            cifradoController = null;
-        }
+        cifradoController = switch (tipoCifrado) {
+            case "César" -> new CifradoCesarController(vista);
+            case "Llave" -> new CifradoLlaveController(vista);
+            case "inverso" -> new CifradoInversoController(vista);
+            default -> null;
+        }; // Manejar otro tipo de cifrado si es necesario
 
         if (cifradoController != null) {
             cifradoController.aplicarAlgoritmo();
