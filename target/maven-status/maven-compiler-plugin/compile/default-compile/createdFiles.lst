@@ -14,4 +14,6 @@ vistas\Interfaz.class
 logicadenegocios\CifradoInverso.class
 vistas\Interfaz$2.class
 vistas\Interfaz$3.class
+controlador\CifradoMensajeInversoController.class
+logicadenegocios\CifradoMensajeInverso.class
 vistas\EnviarCorreoInterfaz.class

@@ -31,6 +31,7 @@ public class ControladorPrincipal {
             case "César" -> new CifradoCesarController(vista);
             case "Llave" -> new CifradoLlaveController(vista);
             case "inverso" -> new CifradoInversoController(vista);
+            case "Mensaje"-> new CifradoMensajeInversoController(vista);
             default -> null;
         }; // Manejar otro tipo de cifrado si es necesario
 
