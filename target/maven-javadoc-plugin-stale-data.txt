@@ -1,0 +1,48 @@
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+-source
+'20'
+-sourcepath
+'C:/Users/josea/OneDrive/Documentos/TEC/TEC/IV semestre/POO/proyecto2/Proyecto2 (1)/Proyecto2/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/josea/OneDrive/Documentos/TEC/TEC/IV semestre/POO/proyecto2/Proyecto2 (1)/Proyecto2/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Proyecto2 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'Proyecto2 1.0-SNAPSHOT API'
+controlador
+logicadenegocios
+vistas
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\src\main\java = 1699756108982
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\allclasses-index.html = 1699758829677
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\allpackages-index.html = 1699758829680
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\copy.svg = 1699758829725
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\element-list = 1699758829494
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\help-doc.html = 1699758829716
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\index-all.html = 1699758829701
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\index.html = 1699758829659
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\member-search-index.js = 1699758829687
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\module-search-index.js = 1699758829682
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\overview-summary.html = 1699758829708
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\overview-tree.html = 1699758829651
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\package-search-index.js = 1699758829684
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\script.js = 1699758829723
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\search-page.js = 1699758829732
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\search.html = 1699758829705
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\search.js = 1699758829730
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\serialized-form.html = 1699758829580
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\stylesheet.css = 1699758829719
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\tag-search-index.js = 1699758829689
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\target\site\apidocs\type-search-index.js = 1699758829685
