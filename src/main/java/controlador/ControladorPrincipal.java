@@ -5,9 +5,7 @@ package controlador;
  *
  * @author Ariel Gomez y Marco perez
  */
-import logicadenegocios.CifradoCesar;
-import logicadenegocios.CifradoLlave;
-import logicadenegocios.CifradoInverso;
+
 import vistas.Interfaz;
 
 public class ControladorPrincipal {
@@ -32,6 +30,7 @@ public class ControladorPrincipal {
             case "Llave" -> new CifradoLlaveController(vista);
             case "inverso" -> new CifradoInversoController(vista);
             case "Mensaje"-> new CifradoMensajeInversoController(vista);
+            case "Código telefónico" -> new CifradoTelefonoController(vista);
             default -> null;
         }; // Manejar otro tipo de cifrado si es necesario
 
