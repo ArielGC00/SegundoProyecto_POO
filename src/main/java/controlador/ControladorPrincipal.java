@@ -39,6 +39,8 @@ public class ControladorPrincipal {
             case "Mensaje"-> new CifradoMensajeInversoController(vista);
             case "Código telefónico" -> new CifradoTelefonoController(vista);
             case "Binario" -> new CifradoBinarioController(vista);
+            case "Vigenére" -> new CifradoVigenereController(vista);
+            
             default -> null;
         }; // Manejar otro tipo de cifrado si es necesario
 
