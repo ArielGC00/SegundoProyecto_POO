@@ -38,6 +38,7 @@ public class ControladorPrincipal {
             case "inverso" -> new CifradoInversoController(vista);
             case "Mensaje"-> new CifradoMensajeInversoController(vista);
             case "Código telefónico" -> new CifradoTelefonoController(vista);
+            //case "RSA" -> new CifradoRSAController(vista);
             default -> null;
         }; // Manejar otro tipo de cifrado si es necesario
 

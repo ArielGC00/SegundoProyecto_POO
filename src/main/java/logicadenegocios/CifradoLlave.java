@@ -10,8 +10,7 @@ public class CifradoLlave {
 
     private String clave;
 
-    public CifradoLlave(String clave) {
-        this.clave = clave.toLowerCase(); // Convertir la clave a minúsculas para simplificar comparaciones
+    public CifradoLlave() {
     }
 
     public String cifrar(String palabra) {
@@ -68,6 +67,10 @@ public class CifradoLlave {
         }
 
         return palabraDescifrada.toString();
+    }
+    
+    public void setClave(String nuevaClave) {
+        this.clave = nuevaClave.toLowerCase();
     }
 }
 
