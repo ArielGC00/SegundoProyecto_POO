@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 
 package logicadenegocios;
 
@@ -13,7 +9,7 @@ import java.util.Map;
  * @author Ariel Gmez y Marco Perez
  */
 
-public class CifradoVigenere {
+public class CifradoVigenere extends Cifrado{
     private int clave;
 
     public void setClave(int clave) {
@@ -34,7 +30,8 @@ public class CifradoVigenere {
             letra++;
         }
     }
-
+    
+    @Override
     public String cifrar(String mensaje) {
         StringBuilder mensajeCifrado = new StringBuilder();
         String[] palabras = mensaje.toLowerCase().split(" ");
@@ -53,7 +50,8 @@ public class CifradoVigenere {
 
         return mensajeCifrado.toString().trim();
     }
-
+    
+    @Override
     public String descifrar(String mensaje) {
         StringBuilder mensajeDescifrado = new StringBuilder();
         String[] palabras = mensaje.split(" ");

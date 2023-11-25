@@ -6,13 +6,14 @@ package logicadenegocios;
  * @author Ariel Gomez y Marco perez
  */
 
-public class CifradoLlave {
+public class CifradoLlave extends Cifrado{
 
     private String clave;
 
     public CifradoLlave() {
     }
-
+    
+    @Override
     public String cifrar(String palabra) {
         StringBuilder palabraCifrada = new StringBuilder();
 
@@ -41,6 +42,7 @@ public class CifradoLlave {
         return palabraCifrada.toString();
     }
 
+    @Override
     public String descifrar(String palabraCifrada) {
         StringBuilder palabraDescifrada = new StringBuilder();
 

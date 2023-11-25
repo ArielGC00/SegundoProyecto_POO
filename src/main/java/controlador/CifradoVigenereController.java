@@ -12,21 +12,15 @@ import logicadenegocios.CifradoVigenere;
  * @author Ariel Gmez y Marco Perez
  */
 
-public class CifradoVigenereController extends CifradoController {
+public class CifradoVigenereController {
 
     private final CifradoVigenere cifrador;
+    private Interfaz vista;
 
     public CifradoVigenereController(Interfaz vista) {
-        super(vista);
         this.cifrador = new CifradoVigenere();
+        this.vista=vista;
     }
-
-    @Override
-    protected void configurarListeners() {
-        vista.getBotonAplicarAlgoritmo().addActionListener(e -> aplicarAlgoritmo());
-    }
-
-    @Override
     public void aplicarAlgoritmo() {
         String mensajeOriginal = vista.getEntradaText().getText();
         String accion = (String) vista.getAccionCodDec().getSelectedItem();

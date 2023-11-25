@@ -5,10 +5,11 @@ package logicadenegocios;
  *
  * @author Ariel Gomez y Marco Perez
  */
-public class CifradoMensajeInverso {
+public class CifradoMensajeInverso extends Cifrado{
     public CifradoMensajeInverso(){
     
     }
+    @Override
     public  String cifrar(String mensaje) {
         char[] caracteres = mensaje.toCharArray();
         StringBuilder mensajeCifrado = new StringBuilder();
@@ -19,7 +20,7 @@ public class CifradoMensajeInverso {
 
         return mensajeCifrado.toString();
     }
-
+    @Override
     public  String descifrar(String mensajeCifrado) {
         return cifrar(mensajeCifrado); // La descifrado es igual al cifrado en este método
     }

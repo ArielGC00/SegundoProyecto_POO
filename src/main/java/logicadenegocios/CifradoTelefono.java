@@ -9,7 +9,7 @@ import java.util.Map;
  *
  * @author Ariel Gomez y Marco Perez
  */
-public class CifradoTelefono {
+public class CifradoTelefono extends Cifrado{
     private static final Map<Character, String> teclado = new HashMap<>();
 
     static {
@@ -40,7 +40,7 @@ public class CifradoTelefono {
         teclado.put('y', "93");
         teclado.put('z', "94");
     }
-
+    @Override
     public String cifrar(String mensaje) {
         StringBuilder resultado = new StringBuilder();
 
@@ -54,7 +54,7 @@ public class CifradoTelefono {
 
         return resultado.toString().trim();
     }
-
+    @Override
     public String descifrar(String mensajeCifrado) {
         StringBuilder resultado = new StringBuilder();
         String[] partes = mensajeCifrado.split(" ");

@@ -7,20 +7,14 @@ import vistas.Interfaz;
  *
  * @author Ariel Gomez y Marco Perez
  */
-public class CifradoMensajeInversoController extends CifradoController{
+public class CifradoMensajeInversoController{
     private final CifradoMensajeInverso cifrador;
+    public Interfaz vista;
 
     public CifradoMensajeInversoController(Interfaz vista) {
-        super(vista);
+        this.vista=vista;
         this.cifrador = new CifradoMensajeInverso();
     }
-
-    @Override
-    protected void configurarListeners() {
-        vista.getBotonAplicarAlgoritmo().addActionListener(e -> aplicarAlgoritmo());
-    }
-
-    @Override
     public void aplicarAlgoritmo() {
         String mensajeOriginal = vista.getEntradaText().getText();
         String accion = (String) vista.getAccionCodDec().getSelectedItem();

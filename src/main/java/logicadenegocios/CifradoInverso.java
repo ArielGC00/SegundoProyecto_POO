@@ -5,11 +5,11 @@ package logicadenegocios;
  *
  * @author Ariel Gomez y Marco Perez
  */
-public class CifradoInverso {
+public class CifradoInverso extends Cifrado{
     
     public CifradoInverso() {
     }
-    
+    @Override
     public String cifrar(String mensaje) {
         String[] palabras = mensaje.split("\\s+");
         StringBuilder mensajeCifrado = new StringBuilder();
@@ -31,7 +31,7 @@ public class CifradoInverso {
 
         return palabraInvertida.toString();
     }
-
+    @Override
     public String descifrar(String mensajeCifrado) {
         return cifrar(mensajeCifrado);
     }

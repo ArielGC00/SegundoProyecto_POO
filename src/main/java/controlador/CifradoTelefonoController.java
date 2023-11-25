@@ -8,20 +8,15 @@ package controlador;
 import logicadenegocios.CifradoTelefono;
 import vistas.Interfaz;
 
-public class CifradoTelefonoController extends CifradoController{
+public class CifradoTelefonoController{
     private final CifradoTelefono cifrador;
+    private Interfaz vista;
 
     public CifradoTelefonoController(Interfaz vista) {
-        super(vista);
+        this.vista=vista;
         this.cifrador = new CifradoTelefono();
     }
 
-    @Override
-    protected void configurarListeners() {
-        vista.getBotonAplicarAlgoritmo().addActionListener(e -> aplicarAlgoritmo());
-    }
-
-    @Override
     public void aplicarAlgoritmo() {
         String mensajeOriginal = vista.getEntradaText().getText();
         String accion = (String) vista.getAccionCodDec().getSelectedItem();

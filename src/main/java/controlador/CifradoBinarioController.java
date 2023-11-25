@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controlador;
-import controlador.CifradoController;
 import vistas.Interfaz;
 import logicadenegocios.CifradoBinario;
 
@@ -13,21 +12,16 @@ import logicadenegocios.CifradoBinario;
  */
 
 
-public class CifradoBinarioController extends CifradoController {
+public class CifradoBinarioController {
 
     private final CifradoBinario cifrador;
+    public Interfaz vista;
 
     public CifradoBinarioController(Interfaz vista) {
-        super(vista);
         this.cifrador = new CifradoBinario();
+        this.vista=vista;
     }
 
-    @Override
-    protected void configurarListeners() {
-        vista.getBotonAplicarAlgoritmo().addActionListener(e -> aplicarAlgoritmo());
-    }
-
-    @Override
     public void aplicarAlgoritmo() {
         String mensajeOriginal = vista.getEntradaText().getText();
         String accion = (String) vista.getAccionCodDec().getSelectedItem();
@@ -36,7 +30,9 @@ public class CifradoBinarioController extends CifradoController {
             String mensajeCifrado = cifrador.cifrar(mensajeOriginal);
             vista.getSalidaText().setText(mensajeCifrado);
         } else {
+            System.out.println(accion+ " mensaje original:"+mensajeOriginal);
             String mensajeDescifrado = cifrador.descifrar(mensajeOriginal);
+            System.out.println("mensaje cifrado:"+mensajeDescifrado);
             vista.getSalidaText().setText(mensajeDescifrado);
         }
     }

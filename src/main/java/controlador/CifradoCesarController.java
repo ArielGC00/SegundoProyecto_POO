@@ -6,21 +6,15 @@ import vistas.Interfaz;
  *
  * @author Ariel Gomez y Marco Perez
  */
-public class CifradoCesarController extends CifradoController {
-
+public class CifradoCesarController {
+    public Interfaz vista;
     private final CifradoCesar cifrador;
 
     public CifradoCesarController(Interfaz vista) {
-        super(vista);
         this.cifrador = new CifradoCesar();
+        this.vista=vista;
     }
 
-    @Override
-    protected void configurarListeners() {
-        vista.getBotonAplicarAlgoritmo().addActionListener(e -> aplicarAlgoritmo());
-    }
-
-    @Override
     public void aplicarAlgoritmo() {
         String mensajeOriginal = vista.getEntradaText().getText();
         String accion = (String) vista.getAccionCodDec().getSelectedItem();

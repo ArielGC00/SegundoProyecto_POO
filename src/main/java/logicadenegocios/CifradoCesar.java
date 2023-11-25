@@ -7,12 +7,13 @@ package logicadenegocios;
  */
 
 
-public class CifradoCesar {
+public class CifradoCesar extends Cifrado{
     private int clave = 3;
 
     public CifradoCesar() {
     }
-
+    
+    @Override
     public String cifrar(String mensaje) {
         StringBuilder mensajeCifrado = new StringBuilder();
 
@@ -35,7 +36,8 @@ public class CifradoCesar {
 
         return mensajeCifrado.toString();
     }
-
+    
+    @Override
     public String descifrar(String mensajeCifrado) {
         StringBuilder mensajeDescifrado = new StringBuilder();
 
@@ -59,4 +61,3 @@ public class CifradoCesar {
         return mensajeDescifrado.toString();
     }
 }
-

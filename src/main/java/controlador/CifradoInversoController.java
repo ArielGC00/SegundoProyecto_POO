@@ -7,20 +7,15 @@ import logicadenegocios.CifradoInverso;
  *
  * @author Ariel Gomez y Marco Perez
  */
-public class CifradoInversoController extends CifradoController {
+public class CifradoInversoController {
     private final CifradoInverso cifrador;
+    public Interfaz vista;
 
     public CifradoInversoController(Interfaz vista) {
-        super(vista);
         this.cifrador = new CifradoInverso();
+        this.vista=vista;
     }
 
-    @Override
-    protected void configurarListeners() {
-        vista.getBotonAplicarAlgoritmo().addActionListener(e -> aplicarAlgoritmo());
-    }
-
-    @Override
     public void aplicarAlgoritmo() {
         String mensajeOriginal = vista.getEntradaText().getText();
         String accion = (String) vista.getAccionCodDec().getSelectedItem();

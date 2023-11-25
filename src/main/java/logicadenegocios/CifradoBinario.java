@@ -12,7 +12,7 @@ import java.util.Map;
  * @author Ariel Gomez y Marco Perez
  */
 
-public class CifradoBinario {
+public class CifradoBinario extends Cifrado{
   
   private static final Map<Character, String> alfabetoBacon = new HashMap<>();
   static {
@@ -43,8 +43,8 @@ public class CifradoBinario {
     alfabetoBacon.put('y', "11000");
     alfabetoBacon.put('z', "11001");
     }
-
-    public static String cifrar(String mensaje) {
+    @Override
+    public String cifrar(String mensaje) {
         StringBuilder mensajeCifrado = new StringBuilder();
 
         for (char caracter : mensaje.toLowerCase().toCharArray()) {
@@ -57,8 +57,8 @@ public class CifradoBinario {
 
         return mensajeCifrado.toString().trim();
     }
-
-    public static String descifrar(String mensajeCifrado) {
+    @Override
+    public String descifrar(String mensajeCifrado) {
         StringBuilder mensajeDescifrado = new StringBuilder();
         String[] bloques = mensajeCifrado.split(" ");
 
@@ -82,10 +82,5 @@ public class CifradoBinario {
         }
         return ' ';
     }
-
-
 }
-
-  
-  
 

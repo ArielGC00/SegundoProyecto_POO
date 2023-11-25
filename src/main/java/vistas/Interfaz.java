@@ -1,10 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package vistas;
 
-import controlador.ControladorPrincipal;
+import controlador.CifradoBinarioController;
+
 
 /**
  *
@@ -12,15 +10,15 @@ import controlador.ControladorPrincipal;
  */
 public class Interfaz extends javax.swing.JFrame {
 
-    private final ControladorPrincipal controladorPrincipal;
+    //private final ControladorPrincipal controladorPrincipal;
 
     public Interfaz() {
         initComponents();
-        controladorPrincipal = new ControladorPrincipal(this); // Puedes cambiar el tipo de cifrado aquí
+
     }
     
     public javax.swing.JButton getBotonAplicarAlgoritmo() {
-        return jButton1; // Cambia jButton1 por el nombre correcto de tu botón
+        return aplicarAlgoritmoButton; // Cambia jButton1 por el nombre correcto de tu botón
     }
     
     public javax.swing.JButton getBtnAbrirTxt() {
@@ -62,7 +60,7 @@ public class Interfaz extends javax.swing.JFrame {
         accionCodDec = new javax.swing.JComboBox<>();
         opcionTipoCifrado = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        aplicarAlgoritmoButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         salidadText = new javax.swing.JTextPane();
         jLabel5 = new javax.swing.JLabel();
@@ -120,10 +118,10 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Salida:");
 
-        jButton1.setText("Aplicar Algoritmo");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        aplicarAlgoritmoButton.setText("Aplicar Algoritmo");
+        aplicarAlgoritmoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                aplicarAlgoritmoButtonActionPerformed(evt);
             }
         });
 
@@ -186,7 +184,7 @@ public class Interfaz extends javax.swing.JFrame {
                                         .addComponent(jButton3))
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(aplicarAlgoritmoButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnAbrirTxt)))
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -210,7 +208,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(aplicarAlgoritmoButton)
                     .addComponent(btnAbrirTxt))
                 .addGap(46, 46, 46)
                 .addComponent(jLabel4)
@@ -237,13 +235,13 @@ public class Interfaz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
   
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void aplicarAlgoritmoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicarAlgoritmoButtonActionPerformed
         // Obtener el tipo de cifrado seleccionado
         String tipoCifrado = (String) opcionTipoCifrado.getSelectedItem();
         // Obtener el texto de entrada
         String textoEntrada = entradaText.getText();
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_aplicarAlgoritmoButtonActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
          dispose();
@@ -274,9 +272,9 @@ public class Interfaz extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JComboBox<String> accionCodDec;
+    private javax.swing.JButton aplicarAlgoritmoButton;
     public javax.swing.JButton btnAbrirTxt;
     public javax.swing.JTextPane entradaText;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JFrame jFrame1;
