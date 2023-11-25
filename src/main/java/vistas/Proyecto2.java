@@ -14,6 +14,8 @@ import controlador.CifradoTelefonoController;
 import controlador.CifradoTripleDESController;
 import controlador.CifradoVigenereController;
 import java.awt.event.ActionEvent;
+import logicadenegocios.ValidacionAscii;
+import logicadenegocios.ValidacionTecladoTelefonico;
 
 /**
  *
@@ -37,18 +39,44 @@ public class Proyecto2 {
         CifradoVigenereController CifradoVigenereController=new CifradoVigenereController(interfaz);
         CifradoTripleDESController CifradoTripleDESController=new CifradoTripleDESController(interfaz);
         CifradoAESController CifradoAESController =new CifradoAESController(interfaz);
+        ValidacionTecladoTelefonico validacionTeclado = new ValidacionTecladoTelefonico();
+        ValidacionAscii ValidacionAscii=new ValidacionAscii();
+        
         
         
         // Manejar la lógica de cifrado/descifrado al hacer clic en el botón
         interfaz.getBotonAplicarAlgoritmo().addActionListener((ActionEvent evt) -> {
             String tipoCifrado=(String) interfaz.getOpcionTipoCifrado().getSelectedItem();
+            String mensajeOriginal = interfaz.getEntradaText().getText();
+            String cifrarDescifrar=(String) interfaz.getAccionCodDec().getSelectedItem();
+            // Crear instancia de ValidacionTecladoTelefonico
+            
+
             switch (tipoCifrado){
                 case "Binario":
+                    
                     CifradoBinarioController.aplicarAlgoritmo();
                     break;
                 case "RSA":
-                    CifradoRSAController.aplicarAlgoritmo();
-                    break;
+                    if(ValidacionAscii.validar(mensajeOriginal, interfaz)==true){
+                        if(cifrarDescifrar.equals("Codificar")){
+                            if(ValidacionAscii.validarEspecificoCifrado(mensajeOriginal, interfaz)==true){
+                                CifradoRSAController.aplicarAlgoritmo();
+                                break;
+                            }else{
+                                break;
+                            }
+                        }else{
+                            if(ValidacionAscii.validarEspecificoDescifrado(mensajeOriginal, interfaz)==true){
+                                CifradoRSAController.aplicarAlgoritmo();
+                                break;
+                            }else{
+                                break;
+                            }
+                        }
+                    }else{
+                        break;
+                    }
                 case "César":
                     CifradoCesarController.aplicarAlgoritmo();
                     break;
@@ -62,17 +90,69 @@ public class Proyecto2 {
                     CifradoMensajeInversoController.aplicarAlgoritmo();
                     break;
                 case "Código telefónico":
-                    CifradoTelefonoController.aplicarAlgoritmo();
-                    break;
+                    if(validacionTeclado.validar(mensajeOriginal, interfaz)==true){
+                        if(cifrarDescifrar.equals("Codificar")){
+                            if(validacionTeclado.validarEspecificoCifrado(mensajeOriginal, interfaz)==true){
+                                CifradoTelefonoController.aplicarAlgoritmo();
+                                break;
+                            }else{
+                                break;
+                            }
+                        }else{
+                            if(validacionTeclado.validarEspecificoDescifrado(mensajeOriginal, interfaz)==true){
+                                CifradoTelefonoController.aplicarAlgoritmo();
+                                break;
+                            }else{
+                                break;
+                            }
+                        }
+                    }else{
+                        break;
+                    }
+                    
                 case "Vigenére":
                     CifradoVigenereController.aplicarAlgoritmo();
                     break;
                 case "DES":
-                    CifradoTripleDESController.aplicarAlgoritmo();
-                    break;
+                    if(ValidacionAscii.validar(mensajeOriginal, interfaz)==true){
+                        if(cifrarDescifrar.equals("Codificar")){
+                            if(ValidacionAscii.validarEspecificoCifrado(mensajeOriginal, interfaz)==true){
+                                CifradoTripleDESController.aplicarAlgoritmo();
+                                break;
+                            }else{
+                                break;
+                            }
+                        }else{
+                            if(ValidacionAscii.validarEspecificoDescifrado(mensajeOriginal, interfaz)==true){
+                                CifradoTripleDESController.aplicarAlgoritmo();
+                                break;
+                            }else{
+                                break;
+                            }
+                        }
+                    }else{
+                        break;
+                    }
                 case "AE":
-                    CifradoAESController.aplicarAlgoritmo();
-                    break;
+                    if(ValidacionAscii.validar(mensajeOriginal, interfaz)==true){
+                        if(cifrarDescifrar.equals("Codificar")){
+                            if(ValidacionAscii.validarEspecificoCifrado(mensajeOriginal, interfaz)==true){
+                                CifradoAESController.aplicarAlgoritmo();
+                                break;
+                            }else{
+                                break;
+                            }
+                        }else{
+                            if(ValidacionAscii.validarEspecificoDescifrado(mensajeOriginal, interfaz)==true){
+                                CifradoAESController.aplicarAlgoritmo();
+                                break;
+                            }else{
+                                break;
+                            }
+                        }
+                    }else{
+                        break;
+                    }
                 default:
                      System.out.println("Opción no reconocida");
             }
