@@ -9,3 +9,4 @@ public abstract class Cifrado {
     public abstract String cifrar(String mensaje);
     public abstract String descifrar(String mensaje);
 }
+ 

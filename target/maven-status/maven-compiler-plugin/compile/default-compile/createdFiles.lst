@@ -1,4 +1,8 @@
 controlador\CifradoVigenereController.class
 logicadenegocios\CifradoVigenere.class
+controlador\CifradoAESController.class
+logicadenegocios\CifradoAES.class
 controlador\CifradoRSAController.class
 logicadenegocios\Cifrado.class
+logicadenegocios\CifradoTripleDES.class
+controlador\CifradoTripleDESController.class
