@@ -6,6 +6,7 @@ C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (
 C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\Proyecto2_POO\src\main\java\vistas\Proyecto2.java
 C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\Proyecto2_POO\src\main\java\controlador\CifradoBinarioController.java
 C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\Proyecto2_POO\src\main\java\vistas\Interfaz.java
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\Proyecto2_POO\src\main\java\logicadenegocios\ValidacionGeneral.java
 C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\Proyecto2_POO\src\main\java\controlador\CifradoVigenereController.java
 C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\Proyecto2_POO\src\main\java\logicadenegocios\ValidacionTecladoTelefonico.java
 C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\Proyecto2_POO\src\main\java\logicadenegocios\Cifrado.java
@@ -16,6 +17,7 @@ C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (
 C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\Proyecto2_POO\src\main\java\vistas\EnviarCorreoInterfaz.java
 C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\Proyecto2_POO\src\main\java\logicadenegocios\CifradoRSA.java
 C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\Proyecto2_POO\src\main\java\logicadenegocios\CifradoLlave.java
+C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\Proyecto2_POO\src\main\java\controlador\AbrirArchivoController.java
 C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\Proyecto2_POO\src\main\java\controlador\CifradoInversoController.java
 C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\Proyecto2_POO\src\main\java\logicadenegocios\CifradoTelefono.java
 C:\Users\josea\OneDrive\Documentos\TEC\TEC\IV semestre\POO\proyecto2\Proyecto2 (1)\Proyecto2\Proyecto2_POO\src\main\java\logicadenegocios\CifradoInverso.java
