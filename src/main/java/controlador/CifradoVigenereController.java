@@ -6,8 +6,6 @@ package controlador;
 import javax.swing.JOptionPane;
 import vistas.Interfaz;
 import logicadenegocios.CifradoVigenere;
-import logicadenegocios.Validacion;
-import logicadenegocios.ValidacionGeneral;
 
 /**
  *
@@ -40,7 +38,7 @@ public class CifradoVigenereController {
             }
 
             // Actualizar la clave
-            cifrador.setClave(Integer.parseInt(nuevaClave));
+            cifrador.setClave(nuevaClave);
         }
 
         if (accion.equals("Codificar")) {
