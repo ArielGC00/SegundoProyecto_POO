@@ -1,8 +1,6 @@
 
 package vistas;
 import logicadenegocios.EnviarCorreos;
-import vistas.Interfaz;
-
 
 /**
  *
@@ -35,8 +33,6 @@ public class EnviarCorreoInterfaz extends javax.swing.JFrame {
     public javax.swing.JButton getBotonEnviarCorreo() {
         return btnEnviarCorreo;
     }
-    
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,7 +49,7 @@ public class EnviarCorreoInterfaz extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         correoDestinatario = new javax.swing.JTextPane();
         btnEnviarCorreo = new javax.swing.JButton();
-        volverBtn = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,7 +72,7 @@ public class EnviarCorreoInterfaz extends javax.swing.JFrame {
             }
         });
 
-        volverBtn.setText("Volver");
+        jButton2.setText("Volver");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -86,7 +82,7 @@ public class EnviarCorreoInterfaz extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
-                    .addComponent(volverBtn))
+                    .addComponent(jButton2))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,7 +103,7 @@ public class EnviarCorreoInterfaz extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEnviarCorreo)
-                    .addComponent(volverBtn))
+                    .addComponent(jButton2))
                 .addGap(28, 28, 28))
         );
 
@@ -133,10 +129,7 @@ public class EnviarCorreoInterfaz extends javax.swing.JFrame {
         EnviarCorreos enviarCorreo = new EnviarCorreos();
         enviarCorreo.enviarCorreo(destinatario, contenidoCorreo);
     }//GEN-LAST:event_btnEnviarCorreoActionPerformed
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        interfaz.setVisible(true);  // Hacer visible la ventana principal
-        dispose();  // Cerrar la ventana actual
-    }
+
     /**
      * @param args the command line arguments
      */
@@ -175,10 +168,10 @@ public class EnviarCorreoInterfaz extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEnviarCorreo;
     private javax.swing.JTextPane correoDestinatario;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton volverBtn;
     // End of variables declaration//GEN-END:variables
 }
