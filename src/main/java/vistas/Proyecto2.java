@@ -19,6 +19,7 @@ import logicadenegocios.ValidacionAscii;
 import logicadenegocios.ValidacionGeneral;
 import logicadenegocios.ValidacionTecladoTelefonico;
 import controlador.EnviarCorreosController;
+import logicadenegocios.CifradoVigenere;
 import logicadenegocios.EnviarCorreos;
 import vistas.EnviarCorreoInterfaz;
 
@@ -28,7 +29,7 @@ import vistas.EnviarCorreoInterfaz;
  */
 public class Proyecto2 {
 
-    public static void main(String args[]) {
+    public static void main(String args[]) {  
        java.awt.EventQueue.invokeLater(() -> {
         Interfaz interfaz = new Interfaz();
         interfaz.setVisible(true);
@@ -180,7 +181,7 @@ public class Proyecto2 {
                                 break;
                             }
                         }else{
-                            if(ValidacionSoloLetras.validarNumerosYEspacios(mensajeOriginal, interfaz)==true){
+                            if(ValidacionSoloLetras.validarEspecificoCifrado(mensajeOriginal, interfaz)==true){
                                 CifradoVigenereController.aplicarAlgoritmo();
                                 break;
                             }else{
