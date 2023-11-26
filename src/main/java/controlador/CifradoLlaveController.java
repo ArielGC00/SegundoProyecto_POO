@@ -3,6 +3,7 @@ package controlador;
 
 import javax.swing.JOptionPane;
 import logicadenegocios.CifradoLlave;
+import logicadenegocios.ValidacionGeneral;
 import vistas.Interfaz;
 
 /**
@@ -13,7 +14,7 @@ import vistas.Interfaz;
 public class CifradoLlaveController {
     public Interfaz vista;
     private final CifradoLlave cifrador;
-
+    public ValidacionGeneral ValidacionGeneral=new ValidacionGeneral();
     public CifradoLlaveController(Interfaz vista) {
         this.vista=vista;
         this.cifrador = new CifradoLlave();
@@ -27,7 +28,7 @@ public class CifradoLlaveController {
             String nuevaClave = JOptionPane.showInputDialog(vista, "Ingrese la clave para el cifrado por llave:");
 
             // Validar si el usuario canceló o ingresó una clave válida
-            if (nuevaClave == null || nuevaClave.isEmpty()) {
+            if (nuevaClave == null || nuevaClave.isEmpty()||ValidacionGeneral.validarEspecificoCifrado(nuevaClave, vista)==false) {
                 // El usuario canceló o no ingresó una clave válida
                 JOptionPane.showMessageDialog(vista, "Se canceló el cifrado por llave.");
                 return;

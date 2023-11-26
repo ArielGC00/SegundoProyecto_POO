@@ -3,6 +3,7 @@ package vistas;
 
 
 
+import controlador.AbrirArchivoController;
 import controlador.CifradoAESController;
 import controlador.CifradoBinarioController;
 import controlador.CifradoCesarController;
@@ -15,6 +16,7 @@ import controlador.CifradoTripleDESController;
 import controlador.CifradoVigenereController;
 import java.awt.event.ActionEvent;
 import logicadenegocios.ValidacionAscii;
+import logicadenegocios.ValidacionGeneral;
 import logicadenegocios.ValidacionTecladoTelefonico;
 import controlador.EnviarCorreosController;
 import logicadenegocios.EnviarCorreos;
@@ -44,7 +46,10 @@ public class Proyecto2 {
         CifradoAESController CifradoAESController =new CifradoAESController(interfaz);
         ValidacionTecladoTelefonico validacionTeclado = new ValidacionTecladoTelefonico();
         ValidacionAscii ValidacionAscii=new ValidacionAscii();
-        
+        ValidacionGeneral ValidacionSoloLetras= new ValidacionGeneral();
+        // Crear instancia del controlador para abrir archivos
+        AbrirArchivoController abrirArchivoController = new AbrirArchivoController(interfaz);
+
         
         
         // Manejar la lógica de cifrado/descifrado al hacer clic en el botón
@@ -57,9 +62,26 @@ public class Proyecto2 {
 
             switch (tipoCifrado){
                 case "Binario":
+                    if(ValidacionSoloLetras.validar(mensajeOriginal, interfaz)==true){
+                        if(cifrarDescifrar.equals("Codificar")){
+                            if(ValidacionSoloLetras.validarEspecificoCifrado(mensajeOriginal, interfaz)==true){
+                                CifradoBinarioController.aplicarAlgoritmo();
+                                break;
+                            }else{
+                                break;
+                            }
+                        }else{
+                            if(ValidacionSoloLetras.validarEspecificoDescifrado(mensajeOriginal, interfaz)==true){
+                                CifradoBinarioController.aplicarAlgoritmo();
+                                break;
+                            }else{
+                                break;
+                            }
+                        }
+                    }else{
+                        break;
+                    }
                     
-                    CifradoBinarioController.aplicarAlgoritmo();
-                    break;
                 case "RSA":
                     if(ValidacionAscii.validar(mensajeOriginal, interfaz)==true){
                         if(cifrarDescifrar.equals("Codificar")){
@@ -81,14 +103,49 @@ public class Proyecto2 {
                         break;
                     }
                 case "César":
-                    CifradoCesarController.aplicarAlgoritmo();
-                    break;
+                    if(ValidacionSoloLetras.validar(mensajeOriginal, interfaz)==true){
+                        if(cifrarDescifrar.equals("Codificar")){
+                            if(ValidacionSoloLetras.validarEspecificoCifrado(mensajeOriginal, interfaz)==true){
+                                CifradoCesarController.aplicarAlgoritmo();
+                                break;
+                            }else{
+                                break;
+                            }
+                        }else{
+                            if(ValidacionSoloLetras.validarEspecificoDescifrado(mensajeOriginal, interfaz)==true){
+                                CifradoCesarController.aplicarAlgoritmo();
+                                break;
+                            }else{
+                                break;
+                            }
+                        }
+                    }else{
+                        break;
+                    }
                 case "inverso":
                     CifradoInversoController.aplicarAlgoritmo();
                     break;
                 case "Llave":
-                    CifradoLlaveController.aplicarAlgoritmo();
-                    break;
+                    if(ValidacionSoloLetras.validar(mensajeOriginal, interfaz)==true){
+                        if(cifrarDescifrar.equals("Codificar")){
+                            if(ValidacionSoloLetras.validarEspecificoCifrado(mensajeOriginal, interfaz)==true){
+                                CifradoLlaveController.aplicarAlgoritmo();
+                                break;
+                            }else{
+                                break;
+                            }
+                        }else{
+                            if(ValidacionSoloLetras.validarEspecificoDescifrado(mensajeOriginal, interfaz)==true){
+                                CifradoLlaveController.aplicarAlgoritmo();
+                                break;
+                            }else{
+                                break;
+                            }
+                        }
+                    }else{
+                        break;
+                    }
+                   
                 case "Mensaje":
                     CifradoMensajeInversoController.aplicarAlgoritmo();
                     break;
@@ -114,8 +171,25 @@ public class Proyecto2 {
                     }
                     
                 case "Vigenére":
-                    CifradoVigenereController.aplicarAlgoritmo();
-                    break;
+                    if(ValidacionSoloLetras.validar(mensajeOriginal, interfaz)==true){
+                        if(cifrarDescifrar.equals("Codificar")){
+                            if(ValidacionSoloLetras.validarEspecificoCifrado(mensajeOriginal, interfaz)==true){
+                                CifradoVigenereController.aplicarAlgoritmo();
+                                break;
+                            }else{
+                                break;
+                            }
+                        }else{
+                            if(ValidacionSoloLetras.validarNumerosYEspacios(mensajeOriginal, interfaz)==true){
+                                CifradoVigenereController.aplicarAlgoritmo();
+                                break;
+                            }else{
+                                break;
+                            }
+                        }
+                    }else{
+                        break;
+                    }
                 case "DES":
                     if(ValidacionAscii.validar(mensajeOriginal, interfaz)==true){
                         if(cifrarDescifrar.equals("Codificar")){
