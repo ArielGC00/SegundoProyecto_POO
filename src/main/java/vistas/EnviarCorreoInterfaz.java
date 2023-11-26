@@ -1,5 +1,6 @@
 
 package vistas;
+import logicadenegocios.EnviarCorreos;
 
 /**
  *
@@ -10,8 +11,27 @@ public class EnviarCorreoInterfaz extends javax.swing.JFrame {
     /**
      * Creates new form EnviarCorreoInterfaz
      */
+    
+     public Interfaz interfaz;
+
+    // El constructor recibe la instancia de Interfaz
+    public EnviarCorreoInterfaz(Interfaz interfaz) {
+        initComponents();
+        this.interfaz = interfaz;
+    }
+    
+    
+        
     public EnviarCorreoInterfaz() {
         initComponents();
+    }
+    
+    public javax.swing.JTextPane getCorreoDestinatario() {
+        return correoDestinatario;
+    }
+    
+    public javax.swing.JButton getBotonEnviarCorreo() {
+        return btnEnviarCorreo;
     }
 
     /**
@@ -27,8 +47,8 @@ public class EnviarCorreoInterfaz extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
-        jButton1 = new javax.swing.JButton();
+        correoDestinatario = new javax.swing.JTextPane();
+        btnEnviarCorreo = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,9 +63,14 @@ public class EnviarCorreoInterfaz extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Ingrese su correo:");
 
-        jScrollPane1.setViewportView(jTextPane1);
+        jScrollPane1.setViewportView(correoDestinatario);
 
-        jButton1.setText("Enviar Correo");
+        btnEnviarCorreo.setText("Enviar Correo");
+        btnEnviarCorreo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnviarCorreoActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Volver");
 
@@ -63,7 +88,7 @@ public class EnviarCorreoInterfaz extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel1))
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(btnEnviarCorreo, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -77,7 +102,7 @@ public class EnviarCorreoInterfaz extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(btnEnviarCorreo)
                     .addComponent(jButton2))
                 .addGap(28, 28, 28))
         );
@@ -95,6 +120,15 @@ public class EnviarCorreoInterfaz extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnEnviarCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarCorreoActionPerformed
+      
+        String destinatario = correoDestinatario.getText();
+        String contenidoCorreo = interfaz.getSalidaTextContent();
+
+        EnviarCorreos enviarCorreo = new EnviarCorreos();
+        enviarCorreo.enviarCorreo(destinatario, contenidoCorreo);
+    }//GEN-LAST:event_btnEnviarCorreoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -132,12 +166,12 @@ public class EnviarCorreoInterfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnEnviarCorreo;
+    private javax.swing.JTextPane correoDestinatario;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }

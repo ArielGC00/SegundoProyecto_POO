@@ -16,6 +16,9 @@ import controlador.CifradoVigenereController;
 import java.awt.event.ActionEvent;
 import logicadenegocios.ValidacionAscii;
 import logicadenegocios.ValidacionTecladoTelefonico;
+import controlador.EnviarCorreosController;
+import logicadenegocios.EnviarCorreos;
+import vistas.EnviarCorreoInterfaz;
 
 /**
  *
@@ -156,6 +159,8 @@ public class Proyecto2 {
                 default:
                      System.out.println("Opción no reconocida");
             }
+            
+            
             
         });
     });

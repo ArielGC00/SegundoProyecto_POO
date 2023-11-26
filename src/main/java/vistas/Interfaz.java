@@ -6,7 +6,7 @@ import controlador.CifradoBinarioController;
 
 /**
  *
- * @author marcoperez
+ * @author marcoperez y Ariel G
  */
 public class Interfaz extends javax.swing.JFrame {
 
@@ -17,12 +17,13 @@ public class Interfaz extends javax.swing.JFrame {
 
     }
     
+    
     public javax.swing.JButton getBotonAplicarAlgoritmo() {
-        return aplicarAlgoritmoButton; // Cambia jButton1 por el nombre correcto de tu botón
+        return aplicarAlgoritmoButton; 
     }
     
     public javax.swing.JButton getBtnAbrirTxt() {
-        return btnAbrirTxt; // Cambia jButton1 por el nombre correcto de tu botón
+        return btnAbrirTxt; 
     }
 
     public javax.swing.JComboBox<String> getAccionCodDec() {
@@ -37,9 +38,15 @@ public class Interfaz extends javax.swing.JFrame {
         return entradaText;
     }
 
-    public javax.swing.JTextPane getSalidaText() {
-        return salidadText;
+    public  javax.swing.JTextPane getSalidaText() {
+     return salidadText;
     }
+    
+    public String getSalidaTextContent() {
+        return salidadText.getText();
+    }
+    
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -236,10 +243,14 @@ public class Interfaz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
   
     private void aplicarAlgoritmoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicarAlgoritmoButtonActionPerformed
-        // Obtener el tipo de cifrado seleccionado
-        String tipoCifrado = (String) opcionTipoCifrado.getSelectedItem();
-        // Obtener el texto de entrada
-        String textoEntrada = entradaText.getText();
+    // Obtener el tipo de cifrado seleccionado
+    String tipoCifrado = (String) opcionTipoCifrado.getSelectedItem();
+    // Obtener el texto de entrada
+    String textoEntrada = entradaText.getText();
+
+    // Obtener el texto de salida utilizando el método en la instancia de Interfaz
+    String textoSalida = salidadText.getText();
+
         
     }//GEN-LAST:event_aplicarAlgoritmoButtonActionPerformed
 
@@ -248,9 +259,10 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-      EnviarCorreoInterfaz enviarCorreo = new EnviarCorreoInterfaz();
-      enviarCorreo.setVisible(true); // Muestra JFrame2
-      dispose(); // Cierra JFrame1 (opcional)
+      // Crear una instancia de EnviarCorreoInterfaz pasando la instancia actual de Interfaz
+        EnviarCorreoInterfaz enviarCorreo = new EnviarCorreoInterfaz(this);
+        enviarCorreo.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void accionCodDecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionCodDecActionPerformed
