@@ -1,4 +1,4 @@
-logicadenegocios/EnviarCorreos$1.class
-controlador/EnviarCorreosController.class
-logicadenegocios/EnviarCorreos.class
-vistas/EnviarCorreoInterfaz$2.class
+controlador\EnviarCorreosController.class
+logicadenegocios\EnviarCorreos.class
+logicadenegocios\EnviarCorreos$1.class
+vistas\EnviarCorreoInterfaz$2.class
