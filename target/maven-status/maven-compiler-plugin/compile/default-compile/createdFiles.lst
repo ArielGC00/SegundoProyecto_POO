@@ -1,9 +1,12 @@
 logicadenegocios\Validacion.class
 controlador\CifradoVigenereController.class
+controlador\AbrirArchivoController$1.class
 logicadenegocios\CifradoVigenere.class
 controlador\CifradoAESController.class
+controlador\AbrirArchivoController.class
 logicadenegocios\CifradoAES.class
 controlador\CifradoRSAController.class
+logicadenegocios\ValidacionGeneral.class
 logicadenegocios\Cifrado.class
 logicadenegocios\ValidacionTecladoTelefonico.class
 logicadenegocios\CifradoTripleDES.class
