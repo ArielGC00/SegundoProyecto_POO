@@ -12,6 +12,7 @@ public class CifradoRSA extends Cifrado{
     private BigInteger n;
     private BigInteger e;
     private BigInteger d;
+    private BigInteger phiN;
     
     public CifradoRSA(){
     
@@ -28,13 +29,13 @@ public class CifradoRSA extends Cifrado{
         n = p.multiply(q);
 
         // Paso 3: Calcular φ(n)
-        BigInteger phiN = p.subtract(BigInteger.ONE).multiply(q.subtract(BigInteger.ONE));
+        phiN = p.subtract(BigInteger.ONE).multiply(q.subtract(BigInteger.ONE));
 
-        // Paso 4: Escoger un número e menor que φ(n) y coprimo con φ(n)
-        e = new BigInteger("65537");  // Usamos un valor común para e en RSA
-
-        // Paso 5: Calcular d tal que (d * e) ≡ 1 (mod φ(n))
-        d = e.modInverse(phiN);
+        // Paso 4: Escoger un número e menor que φ(n)
+        do {
+            e = new BigInteger(phiN.bitLength(), random);
+        } while (e.compareTo(BigInteger.ONE) <= 0 || e.compareTo(phiN) >= 0 || !e.gcd(phiN).equals(BigInteger.ONE)); 
+        
     }
     @Override
     public String cifrar(String mensaje) {
@@ -58,7 +59,9 @@ public class CifradoRSA extends Cifrado{
         throw new UnsupportedOperationException("Falta implementar descifrado con clave privada y módulo");
     }
 
-    public String descifrar(String mensajeCifrado, BigInteger pD, BigInteger pN) {
+    public String descifrar(String mensajeCifrado, BigInteger pE, BigInteger pN) {
+        // Paso 5: Calcular d tal que (d * e) ≡ 1 (mod φ(n))
+        d = pE.modInverse(phiN);
         StringBuilder resultado = new StringBuilder();
 
         // Separar el mensaje cifrado en bloques
@@ -67,7 +70,7 @@ public class CifradoRSA extends Cifrado{
         for (String bloque : bloques) {
             // Aplicar el descifrado a cada bloque
             BigInteger c = new BigInteger(bloque);
-            BigInteger m = c.modPow(pD, pN);
+            BigInteger m = c.modPow(d, pN);
             resultado.append((char) m.intValue());
         }
 
@@ -78,7 +81,7 @@ public class CifradoRSA extends Cifrado{
         return n;
     }
 
-    public BigInteger getD() {
-        return d;
+    public BigInteger getE() {
+        return e;
     }
 }

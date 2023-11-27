@@ -18,11 +18,6 @@ import java.awt.event.ActionEvent;
 import logicadenegocios.ValidacionAscii;
 import logicadenegocios.ValidacionGeneral;
 import logicadenegocios.ValidacionTecladoTelefonico;
-import controlador.EnviarCorreosController;
-import logicadenegocios.CifradoVigenere;
-import logicadenegocios.EnviarCorreos;
-import vistas.EnviarCorreoInterfaz;
-
 /**
  *
  * @author marcoperez

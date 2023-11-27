@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class CifradoRSAController{
     private final CifradoRSA cifrador;
     private BigInteger n;
-    private BigInteger d;
+    private BigInteger e;
     private Interfaz vista;
 
     public CifradoRSAController(Interfaz vista) {
@@ -31,26 +31,26 @@ public class CifradoRSAController{
 
         if (accion.equals("Codificar")) {
             String mensajeCifrado = cifrador.cifrar(mensajeOriginal);
-            d=cifrador.getD();
+            e=cifrador.getE();
             n=cifrador.getN();
-            System.out.println("Cifrado--- "+"D:"+d+" N:"+n);
+            System.out.println("Cifrado--- "+"D:"+e+" N:"+n);
             mostrarMensajeConCopiaAlPortapapeles(vista, "Clave 1: " + n);
-            mostrarMensajeConCopiaAlPortapapeles(vista, "Clave 2: " + d);
+            mostrarMensajeConCopiaAlPortapapeles(vista, "Clave 2: " + e);
             vista.getSalidaText().setText(mensajeCifrado);
         } else {
             try {
             // Si el tipo de cifrado es "Llave", obtener la clave del usuario
             String strClaveN = JOptionPane.showInputDialog(vista, "Ingrese la clave 1 para descifrar");
-            String strClaveD = JOptionPane.showInputDialog(vista, "Ingrese la clave 2 para descifrar");
+            String strClaveE = JOptionPane.showInputDialog(vista, "Ingrese la clave 2 para descifrar");
 
             // Convertir las cadenas a BigInteger
             BigInteger claveN = new BigInteger(strClaveN);
-            BigInteger claveD = new BigInteger(strClaveD);
+            BigInteger claveE = new BigInteger(strClaveE);
 
             System.out.println("Mensaje original: " + mensajeOriginal);
-            System.out.println("D:" + d + " N:" + n);
+            System.out.println("E:" + e + " N:" + n);
 
-            String mensajeDecodificado = cifrador.descifrar(mensajeOriginal, claveD, claveN);
+            String mensajeDecodificado = cifrador.descifrar(mensajeOriginal, claveE, claveN);
             vista.getSalidaText().setText(mensajeDecodificado);
             } catch (NumberFormatException e) {
                 // Capturar la excepción si la entrada del usuario no es un número válido
