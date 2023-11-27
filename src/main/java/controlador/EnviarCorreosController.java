@@ -1,6 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * La clase EnviarCorreosController es un controlador que gestiona la funcionalidad
+ * de enviar correos electrónicos desde una interfaz grafica. Está asociada con las clases
+ 
+ * 
+ * @author Ariel Gomez
+ * @version 1.0
  */
 package controlador;
 
@@ -13,7 +17,14 @@ public class EnviarCorreosController {
     private final EnviarCorreos enviador;
     private final Interfaz vista;
     private final EnviarCorreoInterfaz correoInterfaz;
-
+    /**
+     * Construye un <code>EnviarCorreosController</code> con las instancias de la interfaz principal y
+     * la interfaz de envío de correos electrónicos proporcionadas. Utiliza una instancia de
+     * {@link logicadenegocios.EnviarCorreos} para gestionar el envío de correos electrónicos.
+     *
+     * @param vista La interfaz gráfica principal asociada con este controlador.
+     * @param correoInterfaz La interfaz grafica de envío de correos electrónicos asociada con este controlador.
+     */
     public EnviarCorreosController(Interfaz vista, EnviarCorreoInterfaz correoInterfaz) {
         this.enviador = new EnviarCorreos();
         this.vista = vista;
@@ -23,7 +34,11 @@ public class EnviarCorreosController {
         configurarListeners();
     }
 
-   
+   /**
+     * Abre la ventana de envio de correos electronicos y realiza la accion de enviar el correo.
+     * Obtiene el destinatario y el contenido del correo desde las interfaces asociadas y utiliza
+     * la instancia de {@link logicadenegocios.EnviarCorreos} para enviar el correo electronico.
+     */
     private void abrirVentanaEnviarCorreo() {
         // Obtener el correo del destinatario desde la interfaz de EnviarCorreoInterfaz
         String destinatario = correoInterfaz.getCorreoDestinatario().getText();
@@ -36,6 +51,10 @@ public class EnviarCorreosController {
         System.out.println("Correo enviado con éxito");
     }
     
+    /**
+     * Configura los listeners necesarios para manejar la interacción del usuario en la interfaz
+     * de envio de correos electronicos.
+     */
     private void configurarListeners() {
         correoInterfaz.getBotonEnviarCorreo().addActionListener(e -> abrirVentanaEnviarCorreo());
     }

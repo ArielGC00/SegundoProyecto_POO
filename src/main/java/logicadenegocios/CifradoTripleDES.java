@@ -8,11 +8,21 @@ import java.util.Base64;
 
 /**
  *
+ * La clase <code>CifradoTripleDES</code> extiende la clase abstracta {@link logicadenegocios.Cifrado} e implementa
+ * un algoritmo de cifrado y descifrado utilizando el algoritmo Triple DES (3DES).
+ *
+ * @see logicadenegocios.Cifrado
  * @author Ariel Gomez y Marco Perez
  */
 public class CifradoTripleDES extends Cifrado {
     private static final String ALGORITHM = "DESede";
     private static final String KEY_STRING = "una_clave_secreta_de_24_bytes";
+    /**
+     * Cifra un mensaje utilizando el algoritmo Triple DES (3DES).
+     *
+     * @param mensaje La cadena que se va a cifrar.
+     * @return Una cadena que representa el mensaje cifrado en formato Base64.
+     */
 
     @Override
     public String cifrar(String mensaje) {
@@ -37,7 +47,12 @@ public class CifradoTripleDES extends Cifrado {
             return null;
         }
     }
-
+    /**
+     * Descifra un mensaje cifrado utilizando el algoritmo Triple DES (3DES).
+     *
+     * @param mensajeCifrado La cadena cifrada en formato Base64.
+     * @return Una cadena que representa el mensaje descifrado.
+     */
     @Override
     public String descifrar(String mensajeCifrado) {
         try {

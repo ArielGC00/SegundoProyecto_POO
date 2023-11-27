@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package logicadenegocios;
 
 import java.util.HashMap;
@@ -9,7 +6,16 @@ import java.util.Map;
 
 /**
  *
+ * La clase <code>CifradoBinario</code> extiende la clase abstracta {@link logicadenegocios.Cifrado} e implementa
+ * un algoritmo de cifrado y descifrado utilizando el cifrado binario de Bacon.
+ *
+ * <p>
+ * El cifrado binario de Bacon es un método de codificación de mensajes que representa cada letra del alfabeto
+ * con una cadena binaria de 5 bits. En este cifrado, las letras se dividen en dos grupos (A y B), y cada letra
+ * es representada por una combinación de ceros (0) y unos (1) según su grupo.
+ * </p>
  * @author Ariel Gomez y Marco Perez
+ * @see logicadenegocios.Cifrado
  */
 
 public class CifradoBinario extends Cifrado{
@@ -43,6 +49,13 @@ public class CifradoBinario extends Cifrado{
     alfabetoBacon.put('y', "11000");
     alfabetoBacon.put('z', "11001");
     }
+    /**
+     * Cifra el mensaje utilizando el cifrado binario de Bacon.
+     *
+     * @param mensaje El mensaje a cifrar.
+     * @return Una cadena que representa el mensaje cifrado. Retorna una cadena vacía en caso de no encontrar
+     *         una representación binaria para una letra.
+     */
     @Override
     public String cifrar(String mensaje) {
         StringBuilder mensajeCifrado = new StringBuilder();
@@ -57,6 +70,13 @@ public class CifradoBinario extends Cifrado{
 
         return mensajeCifrado.toString().trim();
     }
+    /**
+     * Descifra el mensaje cifrado utilizando el cifrado binario de Bacon.
+     *
+     * @param mensajeCifrado Una cadena que contiene el mensaje cifrado.
+     * @return El mensaje descifrado. Retorna una cadena vacía en caso de no encontrar una letra
+     *         correspondiente para un conjunto de bits.
+     */
     @Override
     public String descifrar(String mensajeCifrado) {
         StringBuilder mensajeDescifrado = new StringBuilder();
@@ -73,7 +93,13 @@ public class CifradoBinario extends Cifrado{
 
         return mensajeDescifrado.toString();
     }
-
+    /**
+     * Obtiene el caracter correspondiente a un código binario de Bacon.
+     *
+     * @param codigo El código binario de Bacon.
+     * @return El caracter correspondiente al código. Retorna un espacio en blanco si no se encuentra
+     *         una correspondencia.
+     */
     private static char obtenerCaracterPorCodigo(String codigo) {
         for (Map.Entry<Character, String> entry : alfabetoBacon.entrySet()) {
             if (entry.getValue().equals(codigo)) {

@@ -1,12 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package logicadenegocios;
 import java.util.HashMap;
 import java.util.Map;
 /**
+ * La clase <code>CifradoTelefono</code> extiende la clase abstracta {@link logicadenegocios.Cifrado} e implementa
+ * un algoritmo de cifrado y descifrado que utiliza la disposición numérica de un teclado telefónico para representar
+ * letras.
  *
+ * @see logicadenegocios.Cifrado
  * @author Ariel Gomez y Marco Perez
  */
 public class CifradoTelefono extends Cifrado{
@@ -40,6 +40,12 @@ public class CifradoTelefono extends Cifrado{
         teclado.put('y', "93");
         teclado.put('z', "94");
     }
+    /**
+     * Cifra un mensaje utilizando la disposición numérica de un teclado telefónico.
+     *
+     * @param mensaje La cadena que se va a cifrar.
+     * @return Una cadena que representa el mensaje cifrado.
+     */
     @Override
     public String cifrar(String mensaje) {
         StringBuilder resultado = new StringBuilder();
@@ -54,6 +60,12 @@ public class CifradoTelefono extends Cifrado{
 
         return resultado.toString().trim();
     }
+    /**
+     * Descifra un mensaje cifrado utilizando la disposición numérica de un teclado telefónico.
+     *
+     * @param mensajeCifrado La cadena que se va a descifrar.
+     * @return Una cadena que representa el mensaje descifrado.
+     */
     @Override
     public String descifrar(String mensajeCifrado) {
         StringBuilder resultado = new StringBuilder();

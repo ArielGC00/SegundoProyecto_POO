@@ -1,0 +1,24 @@
+-classpath
+'C:/Users/josea/.m2/repository/com/sun/mail/javax.mail/1.6.2/javax.mail-1.6.2.jar;C:/Users/josea/.m2/repository/javax/activation/activation/1.1.1/activation-1.1.1.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'20'
+-sourcepath
+'C:/Users/josea/OneDrive/Documentos/TEC/TEC/IV semestre/POO/proyecto2/Proyecto2 (1)/Proyecto2/Proyecto2_POO/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/josea/OneDrive/Documentos/TEC/TEC/IV semestre/POO/proyecto2/Proyecto2 (1)/Proyecto2/Proyecto2_POO/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Proyecto2 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'Proyecto2 1.0-SNAPSHOT API'

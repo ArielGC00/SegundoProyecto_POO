@@ -3,16 +3,31 @@ package logicadenegocios;
 
 /**
  *
+ * La clase <code>CifradoCesar</code> extiende la clase abstracta {@link logicadenegocios.Cifrado} e implementa
+ * un algoritmo de cifrado y descifrado utilizando el cifrado César.
+ * <p>
+ * El cifrado César es un método de cifrado por sustitución simple en el que cada letra en el texto sin formato
+ * se desplaza un número fijo de posiciones hacia la derecha en el alfabeto. En esta implementación, el desplazamiento
+ * (clave) predeterminado es de 3 posiciones, pero puede ser modificado según sea necesario.
+ * </p>
+ *
  * @author Ariel Gomez y Marco Perez
+ * 
+ * @see logicadenegocios.Cifrado
  */
 
 
 public class CifradoCesar extends Cifrado{
     private int clave = 3;
-
+    
     public CifradoCesar() {
     }
-    
+    /**
+     * Cifra el mensaje utilizando el cifrado César.
+     *
+     * @param mensaje El mensaje a cifrar.
+     * @return Una cadena que representa el mensaje cifrado.
+     */
     @Override
     public String cifrar(String mensaje) {
         StringBuilder mensajeCifrado = new StringBuilder();
@@ -36,7 +51,12 @@ public class CifradoCesar extends Cifrado{
 
         return mensajeCifrado.toString();
     }
-    
+    /**
+     * Descifra el mensaje cifrado utilizando el cifrado César.
+     *
+     * @param mensajeCifrado Una cadena que contiene el mensaje cifrado.
+     * @return El mensaje descifrado.
+     */
     @Override
     public String descifrar(String mensajeCifrado) {
         StringBuilder mensajeDescifrado = new StringBuilder();

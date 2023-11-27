@@ -4,44 +4,70 @@ package vistas;
 import controlador.CifradoBinarioController;
 
 
-/**
- *
- * @author marcoperez y Ariel G
- */
+
 public class Interfaz extends javax.swing.JFrame {
 
-    //private final ControladorPrincipal controladorPrincipal;
-
+    /**
+     * Constructor por defecto que inicializa y configura los componentes de la interfaz.
+     */
     public Interfaz() {
         initComponents();
 
     }
     
-    
+    /**
+     * Obtiene el botón para aplicar el algoritmo de cifrado o descifrado.
+     *
+     * @return El botón para aplicar el algoritmo.
+     */
     public javax.swing.JButton getBotonAplicarAlgoritmo() {
         return aplicarAlgoritmoButton; 
     }
-    
+    /**
+     * Obtiene el botón para abrir archivos de texto (TXT).
+     *
+     * @return El botón para abrir archivos de texto.
+     */
     public javax.swing.JButton getBtnAbrirTxt() {
         return btnAbrirTxt; 
     }
-
+    /**
+     * Obtiene el ComboBox para seleccionar la acción de codificación o decodificación.
+     *
+     * @return El ComboBox de acción de codificación o decodificación.
+     */
     public javax.swing.JComboBox<String> getAccionCodDec() {
         return accionCodDec;
     }
-
+    /**
+     * Obtiene el ComboBox para seleccionar el tipo de cifrado.
+     *
+     * @return El ComboBox de tipo de cifrado.
+     */
     public javax.swing.JComboBox<String> getOpcionTipoCifrado() {
         return opcionTipoCifrado;
     }
-
+    /**
+     * Obtiene el componente de texto para la entrada de datos.
+     *
+     * @return El componente de texto para la entrada de datos.
+     */
     public javax.swing.JTextPane getEntradaText() {
         return entradaText;
     }
-
+    /**
+     * Obtiene el componente de texto para la salida de datos.
+     *
+     * @return El componente de texto para la salida de datos.
+     */
     public  javax.swing.JTextPane getSalidaText() {
      return salidadText;
     }
-    
+    /**
+     * Obtiene el contenido del componente de texto para la salida de datos.
+     *
+     * @return El contenido del componente de texto para la salida de datos.
+     */
     public String getSalidaTextContent() {
         return salidadText.getText();
     }
@@ -242,6 +268,11 @@ public class Interfaz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
   
+    /**
+     * Maneja el evento de clic en el botón para aplicar el algoritmo de cifrado o descifrado.
+     *
+     * @param evt El evento de acción.
+     */
     private void aplicarAlgoritmoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aplicarAlgoritmoButtonActionPerformed
     // Obtener el tipo de cifrado seleccionado
     String tipoCifrado = (String) opcionTipoCifrado.getSelectedItem();
@@ -253,34 +284,53 @@ public class Interfaz extends javax.swing.JFrame {
 
         
     }//GEN-LAST:event_aplicarAlgoritmoButtonActionPerformed
-
+    /**
+     * Maneja el evento de clic en el botón para salir de la aplicación.
+     *
+     * @param evt El evento de acción.
+     */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
          dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    /**
+     * Maneja el evento de clic en el botón para enviar el resultado por correo electrónico.
+     *
+     * @param evt El evento de acción.
+     */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
       // Crear una instancia de EnviarCorreoInterfaz pasando la instancia actual de Interfaz
         EnviarCorreoInterfaz enviarCorreo = new EnviarCorreoInterfaz(this);
         enviarCorreo.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
-
+    /**
+     * Maneja el evento de cambio en la acción de codificación o decodificación.
+     *
+     * @param evt El evento de acción.
+     */
     private void accionCodDecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionCodDecActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_accionCodDecActionPerformed
-
+    /**
+     * Maneja el evento de cambio en el tipo de cifrado seleccionado.
+     *
+     * @param evt El evento de acción.
+     */
     private void opcionTipoCifradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionTipoCifradoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_opcionTipoCifradoActionPerformed
 
     /**
-     * @param args the command line arguments
+     * Método principal que inicia la aplicación.
+     *
+     * @param args Los argumentos de la línea de comandos.
      */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(() -> {
             new Interfaz().setVisible(true);
         });
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JComboBox<String> accionCodDec;

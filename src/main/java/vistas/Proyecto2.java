@@ -19,11 +19,16 @@ import logicadenegocios.ValidacionAscii;
 import logicadenegocios.ValidacionGeneral;
 import logicadenegocios.ValidacionTecladoTelefonico;
 /**
+ *La clase <code>Proyecto2</code> representa la clase principal que inicia la aplicación.
  *
- * @author marcoperez
+ * @author Marco Perez y Ariel Gomez
  */
 public class Proyecto2 {
-
+    /**
+     * Método principal que inicia la aplicación.
+     *
+     * @param args Los argumentos de la línea de comandos.
+     */
     public static void main(String args[]) {  
        java.awt.EventQueue.invokeLater(() -> {
         Interfaz interfaz = new Interfaz();

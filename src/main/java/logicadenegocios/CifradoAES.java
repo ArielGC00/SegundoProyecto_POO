@@ -9,12 +9,35 @@ import java.util.Base64;
 import javax.crypto.spec.SecretKeySpec;
 
 /**
+ *La clase <code>CifradoAES</code> extiende la clase abstracta {@link logicadenegocios.Cifrado} e implementa
+ * un algoritmo de cifrado y descifrado utilizando el estándar AES (Advanced Encryption Standard).
+ *
+ * <p>
+ * Utiliza una clave secreta generada de forma aleatoria y un vector de inicialización (IV) también generado
+ * de forma aleatoria para cifrar y descifrar el mensaje. El algoritmo de cifrado utiliza el modo de operación
+ * CBC (Cipher Block Chaining) con el esquema de relleno PKCS5Padding.
+ * </p>
  *
  * @author Ariel Gomez y Marco Perez
+  * @see logicadenegocios.Cifrado
+ * @see javax.crypto.Cipher
+ * @see javax.crypto.KeyGenerator
+ * @see javax.crypto.SecretKey
+ * @see javax.crypto.spec.IvParameterSpec
+ * @see java.util.Base64
+ * @see javax.crypto.spec.SecretKeySpec
  */
 public class CifradoAES extends Cifrado {
     private static final String ALGORITHM = "AES";
     private static final String TRANSFORMATION = "AES/CBC/PKCS5Padding";
+    
+    /**
+     * Cifra el mensaje utilizando el algoritmo AES con una clave generada aleatoriamente y un IV aleatorio.
+     *
+     * @param mensaje El mensaje a cifrar.
+     * @return Una cadena que representa la clave cifrada, el IV cifrado y el mensaje cifrado, separados por ":".
+     *         Retorna {@code null} en caso de errores.
+     */
 
     @Override
     public String cifrar(String mensaje) {
@@ -49,6 +72,13 @@ public class CifradoAES extends Cifrado {
         }
     }
 
+    /**
+     * Descifra el mensaje cifrado utilizando el algoritmo AES con la clave y el IV proporcionados.
+     *
+     * @param mensajeCifrado Una cadena que contiene la clave cifrada, el IV cifrado y el mensaje cifrado,
+     *                        separados por ":".
+     * @return El mensaje descifrado. Retorna {@code null} en caso de errores.
+     */
     @Override
     public String descifrar(String mensajeCifrado) {
         try {

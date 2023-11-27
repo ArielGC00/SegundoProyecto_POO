@@ -2,7 +2,10 @@
 package logicadenegocios;
 
 /**
+ *La clase <code>CifradoRSA</code> extiende la clase abstracta {@link logicadenegocios.Cifrado} e implementa
+ * un algoritmo de cifrado y descifrado utilizando el algoritmo de cifrado RSA (Rivest-Shamir-Adleman).
  *
+ * @see logicadenegocios.Cifrado
  * @author Ariel Gomez y Marco Perez
  */
 
@@ -17,7 +20,9 @@ public class CifradoRSA extends Cifrado{
     public CifradoRSA(){
     
     }
-    
+    /**
+     * Genera las claves necesarias para el cifrado y descifrado RSA.
+     */
     public void generarClaves() {
         SecureRandom random = new SecureRandom();
 
@@ -37,6 +42,12 @@ public class CifradoRSA extends Cifrado{
         } while (e.compareTo(BigInteger.ONE) <= 0 || e.compareTo(phiN) >= 0 || !e.gcd(phiN).equals(BigInteger.ONE)); 
         
     }
+    /**
+     * Cifra un mensaje utilizando el algoritmo de cifrado RSA.
+     *
+     * @param mensaje La cadena que se va a cifrar.
+     * @return Una cadena que representa el mensaje cifrado.
+     */
     @Override
     public String cifrar(String mensaje) {
         StringBuilder resultado = new StringBuilder();
@@ -53,12 +64,25 @@ public class CifradoRSA extends Cifrado{
 
         return resultado.toString();
     }
+    /**
+     * Descifra un mensaje cifrado utilizando el algoritmo de descifrado RSA.
+     *
+     * @param mensajeCifrado La cadena que se va a descifrar.
+     * @return Una cadena que representa el mensaje descifrado.
+     */
     @Override
     public String descifrar(String mensajeCifrado) {
         // Aquí deberías manejar la situación donde no tienes los parámetros pD y pN
         throw new UnsupportedOperationException("Falta implementar descifrado con clave privada y módulo");
     }
-
+    /**
+     * Descifra un mensaje cifrado utilizando una clave privada y un módulo dados.
+     *
+     * @param mensajeCifrado La cadena que se va a descifrar.
+     * @param pE             La clave privada.
+     * @param pN             El módulo.
+     * @return Una cadena que representa el mensaje descifrado.
+     */
     public String descifrar(String mensajeCifrado, BigInteger pE, BigInteger pN) {
         // Paso 5: Calcular d tal que (d * e) ≡ 1 (mod φ(n))
         d = pE.modInverse(phiN);
@@ -76,11 +100,19 @@ public class CifradoRSA extends Cifrado{
 
         return resultado.toString();
     }
-
+    /**
+     * Obtiene el módulo utilizado en el cifrado y descifrado RSA.
+     *
+     * @return El módulo.
+     */
     public BigInteger getN() {
         return n;
     }
-
+    /**
+     * Obtiene la clave pública utilizada en el cifrado RSA.
+     *
+     * @return La clave pública.
+     */
     public BigInteger getE() {
         return e;
     }

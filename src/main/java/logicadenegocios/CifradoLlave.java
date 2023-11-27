@@ -2,8 +2,11 @@
 package logicadenegocios;
 
 /**
+ * La clase <code>CifradoLlave</code> extiende la clase abstracta {@link logicadenegocios.Cifrado} e implementa
+ * un algoritmo de cifrado y descifrado que utiliza una clave proporcionada por el usuario.
  *
  * @author Ariel Gomez y Marco perez
+ * @see logicadenegocios.Cifrado
  */
 
 public class CifradoLlave extends Cifrado{
@@ -12,6 +15,12 @@ public class CifradoLlave extends Cifrado{
 
     public CifradoLlave() {
     }
+    /**
+     * Cifra un mensaje utilizando el cifrado por clave.
+     *
+     * @param mensaje La cadena que se va a cifrar.
+     * @return Una cadena que representa el mensaje cifrado.
+     */
     
     @Override
     public String cifrar(String palabra) {
@@ -41,7 +50,12 @@ public class CifradoLlave extends Cifrado{
 
         return palabraCifrada.toString();
     }
-
+    /**
+     * Descifra un mensaje cifrado utilizando el cifrado por clave.
+     *
+     * @param palabraCifrada La cadena que se va a descifrar.
+     * @return Una cadena que representa el mensaje descifrado.
+     */
     @Override
     public String descifrar(String palabraCifrada) {
         StringBuilder palabraDescifrada = new StringBuilder();
@@ -70,7 +84,11 @@ public class CifradoLlave extends Cifrado{
 
         return palabraDescifrada.toString();
     }
-    
+    /**
+     * Establece la clave utilizada para el cifrado y descifrado.
+     *
+     * @param nuevaClave La nueva clave alfabética proporcionada por el usuario.
+     */
     public void setClave(String nuevaClave) {
         this.clave = nuevaClave.toLowerCase();
     }

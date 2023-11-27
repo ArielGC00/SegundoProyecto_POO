@@ -3,33 +3,49 @@ package vistas;
 import logicadenegocios.EnviarCorreos;
 
 /**
- *
+ *La clase <code>EnviarCorreoInterfaz</code> representa la interfaz gráfica para enviar correos electrónicos.
+ * 
  * @author marcoperez y ariel gomez
  */
 public class EnviarCorreoInterfaz extends javax.swing.JFrame {
 
     /**
-     * Creates new form EnviarCorreoInterfaz
+     * Instancia de la interfaz principal que permite acceder a los datos.
      */
     
      public Interfaz interfaz;
 
-    // El constructor recibe la instancia de Interfaz
+    /**
+     * Constructor que recibe la instancia de Interfaz.
+     *
+     * @param interfaz La instancia de la interfaz principal.
+     */
     public EnviarCorreoInterfaz(Interfaz interfaz) {
         initComponents();
         this.interfaz = interfaz;
     }
     
     
-        
+    /**
+     * Constructor por defecto.
+     */
     public EnviarCorreoInterfaz() {
         initComponents();
     }
     
+    /**
+     * Obtiene el componente de texto para el correo destinatario.
+     *
+     * @return El componente de texto para el correo destinatario.
+     */
     public javax.swing.JTextPane getCorreoDestinatario() {
         return correoDestinatario;
     }
-    
+    /**
+     * Obtiene el botón para enviar correos.
+     *
+     * @return El botón para enviar correos.
+     */
     public javax.swing.JButton getBotonEnviarCorreo() {
         return btnEnviarCorreo;
     }
@@ -126,6 +142,11 @@ public class EnviarCorreoInterfaz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Maneja el evento de clic en el botón para enviar correos.
+     *
+     * @param evt El evento de acción.
+     */
     private void btnEnviarCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarCorreoActionPerformed
       
         String destinatario = correoDestinatario.getText();
@@ -134,7 +155,11 @@ public class EnviarCorreoInterfaz extends javax.swing.JFrame {
         EnviarCorreos enviarCorreo = new EnviarCorreos();
         enviarCorreo.enviarCorreo(destinatario, contenidoCorreo);
     }//GEN-LAST:event_btnEnviarCorreoActionPerformed
-
+    /**
+     * Maneja el evento de clic en el botón para volver.
+     *
+     * @param evt El evento de acción.
+     */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
     Interfaz interfaz = new Interfaz();
         interfaz.setVisible(true);
@@ -142,7 +167,9 @@ public class EnviarCorreoInterfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
-     * @param args the command line arguments
+     * Método principal que inicia la aplicación.
+     *
+     * @param args Los argumentos de la línea de comandos.
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

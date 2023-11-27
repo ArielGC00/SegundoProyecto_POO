@@ -4,12 +4,22 @@ package logicadenegocios;
 
 /**
  *
+ * La clase <code>CifradoVigenere</code> extiende la clase abstracta {@link logicadenegocios.Cifrado} e implementa
+ * un algoritmo de cifrado y descifrado utilizando el cifrado Vigenère.
+ *
+ * @see logicadenegocios.Cifrado
+ * 
  * @author Ariel Gmez y Marco Perez
  */
 
 public class CifradoVigenere extends Cifrado {
     private String clave;
-
+    
+    /**
+     * Establece la clave numérica utilizada en el cifrado Vigenère.
+     *
+     * @param clave La clave numérica como una cadena.
+     */
     public void setClave(String clave) {
         try {
             int claveComoInt = Integer.parseInt(clave);
@@ -22,7 +32,12 @@ public class CifradoVigenere extends Cifrado {
         }
          // Convertir la clave a mayúsculas para facilitar la manipulación
     }
-
+    /**
+     * Cifra un mensaje utilizando el cifrado Vigenère.
+     *
+     * @param mensaje La cadena que se va a cifrar.
+     * @return Una cadena que representa el mensaje cifrado.
+     */
     @Override
     public String cifrar(String mensaje) {
         StringBuilder mensajeCifrado = new StringBuilder();
@@ -50,7 +65,12 @@ public class CifradoVigenere extends Cifrado {
 
         return mensajeCifrado.toString();
     }
-
+    /**
+     * Descifra un mensaje cifrado utilizando el cifrado Vigenère.
+     *
+     * @param mensaje La cadena cifrada.
+     * @return Una cadena que representa el mensaje descifrado.
+     */
     @Override
     public String descifrar(String mensaje) {
         StringBuilder mensajeDescifrado = new StringBuilder();

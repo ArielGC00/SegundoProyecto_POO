@@ -17,12 +17,18 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 /**
- * Clase para enviar correos electrónicos.
+ * La clase <code>EnviarCorreos</code> proporciona métodos para enviar correos electrónicos y verificar la validez
+ * de las direcciones de correo utilizando la API emailable.
  * 
  * @author marco P y Ariel G
  */
 public class EnviarCorreos {
-
+    /**
+     * Envía un correo electrónico a la dirección proporcionada con el contenido especificado.
+     *
+     * @param destinatario      La dirección de correo electrónico del destinatario.
+     * @param contenidoCorreo   El contenido del correo electrónico.
+     */
     public void enviarCorreo(String destinatario, String contenidoCorreo) {
         // Verificar el correo con la API emailable antes de enviar
         if (verificarCorreo(destinatario)) {
@@ -60,7 +66,12 @@ public class EnviarCorreos {
             System.out.println("Correo no válido. Verificación fallida.");
         }
     }
-
+    /**
+     * Verifica la validez de una dirección de correo electrónico utilizando la API emailable.
+     *
+     * @param correo La dirección de correo electrónico a verificar.
+     * @return true si la dirección de correo es válida, false si no lo es.
+     */
     private boolean verificarCorreo(String correo) {
         // URL de la API emailable para verificar correos electrónicos
         String apiUrl = "https://api.emailable.com/v1/verify?email=mapp1803@gmail.com&api_key=live_4ca69232cf6efc191f35&email=" + correo;
