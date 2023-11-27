@@ -67,12 +67,8 @@ public class Proyecto2 {
                                 break;
                             }
                         }else{
-                            if(ValidacionSoloLetras.validarEspecificoDescifrado(mensajeOriginal, interfaz)==true){
-                                CifradoBinarioController.aplicarAlgoritmo();
-                                break;
-                            }else{
-                                break;
-                            }
+                            CifradoBinarioController.aplicarAlgoritmo();
+                            break;
                         }
                     }else{
                         break;
